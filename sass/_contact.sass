@@ -1,0 +1,66 @@
+.footer
+	width: 100vw
+	min-height: 100px
+	background-color: $navBg
+	padding-bottom: 20px
+
+.footer__container
+	display: flex
+	flex-direction: row
+	justify-content: space-around
+
+	@media (max-width: 600px)
+		flex-direction: column
+
+.footer__left, .footer__right
+	width: 45vw
+	font-family: $lato
+	padding: 10px
+	display: flex
+	flex-direction: column
+
+	@media (max-width: 600px)
+		width: 90vw
+
+.footer__right a
+	text-decoration: none
+	color: $menuBtns
+	line-height: 1.6
+
+.footer__title
+	font-family: $vibes
+	font-size: 2em
+	text-align: center
+	padding: 20px 0	
+
+.message
+	min-height: 120px
+
+.footer__left h3, .footer__right h3
+	font-family: $vibes
+	font-size: 1.6em
+	margin-bottom: 10px
+
+.message, .name, .email
+	width: 90%
+	margin-bottom: 10px
+	font-family: $lato
+	font-size: 1.2em
+	outline: none
+
+.submit
+	width: 150px
+	margin-bottom: 0
+	font-family: $lato
+	color: $white
+	font-size: 20px
+	background-color: $aboutText
+	outline: none
+
+.footer__contactForm
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
+
+.footer__right
+	

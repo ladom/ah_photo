@@ -1,0 +1,118 @@
+.galleryThumbBorder img
+	width: 300px
+
+.gallery__thumb
+	width: 300px
+	text-align: center
+	color: $menuBtns
+	font-size: 1.6em
+	font-family: $vibes
+	margin: 30px 20px
+
+.gallery__title
+	font-size: 2em
+	font-family: $vibes
+	text-align: center
+	padding-bottom: 20px
+
+.gallery__theme
+	display: none
+
+.gallery__thumbnails
+	display: flex
+	flex-wrap: wrap
+	max-width: 100vw
+	justify-content: space-around
+
+.gallery__thumb--img
+	opacity: 0.6
+	transition: 0.4s
+
+	&:hover
+		opacity: 1
+
+.modal
+	width: 100vw
+	height: 100vh
+	position: fixed
+	top: 0
+	left: 0
+	background-color: $modalBg
+	z-index: 99
+	display: none
+
+.modal__img--main
+	
+	max-height: 75vh
+	width: auto
+	display: block
+	max-width: 95vw
+	margin: 5px
+	opacity: 1
+	transition: 0.5s
+
+.modal__img--frame
+	display: flex
+	justify-content: center
+	align-items: center
+	width: 100vw
+	height: 80vh
+	top: 0
+	left: 0
+
+.modal__thumb
+	max-height: 18vh
+	width: auto
+	margin: 5px
+	opacity: 0.6
+
+.modal__thumbs
+	margin: 0 30px
+	display: flex
+	flex-direction: row
+	overflow-x: scroll
+	justify-content: flex-start
+
+
+.modal__close
+	position: absolute
+	top: 10px
+	right: 15px
+	font-size: 30px
+	color: $navBgHover
+
+	&:hover
+		color: $closeActive
+		cursor: pointer
+
+	&:active
+		transform: scale(0.96)
+		text-shadow: 0 0 10px $navBgHover
+
+.modal__direction
+	width: 100vw
+	height: 50px
+	position: absolute
+	top: 40%
+	transform: translateY(-50%)
+	display: flex
+	justify-content: space-between
+
+.modal__direction--left, .modal__direction--right
+	width: 50px
+	height: 50px
+	display: flex
+	justify-content: center
+	align-items: center
+
+.modal__direction i
+	font-size: 80px
+	color: $navBgHover
+
+	&:hover
+		color: $closeActive
+		cursor: pointer
+
+	&:active
+		transform: scale(0.96)
+		text-shadow: 0 0 10px $navBgHover
