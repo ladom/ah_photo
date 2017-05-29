@@ -29,3 +29,23 @@ $('a[href^="#"]').on('click', function(event) {
         }, 1000);
     }
 });
+
+var galleryList = document.querySelector('.gallery__list');
+
+function showGalleryList() {
+    if (window.innerWidth > 600) {
+        var gallBtn = document.getElementById('galleryBtn');
+        var rect = gallBtn.getBoundingClientRect();
+        galleryList.style.left = `${rect.left}px`;
+        galleryList.style.display = "block";
+    }
+}
+
+document.querySelector('.galeria').addEventListener('mouseover', showGalleryList);
+
+function hideGalleryList() {
+    galleryList.style.display = "none";
+}
+
+document.querySelector('.galeria').addEventListener('mouseout', hideGalleryList);
+hideGalleryList();

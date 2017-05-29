@@ -2,7 +2,7 @@
 <html lang="pl">
 
 <head>
-    <title>Anna Hapanowicz Photography</title>
+    <title>Anna Ha Photography</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="Shortcut icon" href="pictures/ah_icon.ico">
@@ -32,7 +32,16 @@
                 <ul class="navBar__body--list">
                     <li><a href="#about" id="aboutBtn">O mnie</a></li>
                     <li><a href="#offer" id="offerBtn">Oferta</a></li>
-                    <li><a href="#gallery" id="galleryBtn">Galeria</a></li>
+                    <li class="galeria"><a href="#gallery" id="galleryBtn">Galeria
+                        </a>
+                        <ul class="gallery__list">
+                            <li>Sesje rodzinne</li>
+                            <li>Sesje ciążowe</li>
+                            <li>Sesje niemowlęce</li>
+                            <li>Różne</li>
+                        </ul>
+
+                    </li>
                     <li><a href="#session" id="sessionBtn">O sesjach</a></li>
                     <li><a href="#contact" id="contactBtn">Kontakt</a></li>
                 </ul>
@@ -42,7 +51,7 @@
 
     <!--Jumbotron-->
 
-    <div class="jumbotron">
+    <div class="jumbotron container">
         <div class="jumbotron__rustic">
         </div>
         <div class="container">
@@ -78,7 +87,7 @@
 
     <!--Offer-->
 
-    <div class="offer" id="offer">
+    <div class="offer container" id="offer">
         <div class="container">
             <h2 class="offer__title">Oferta</h2>
             <p class="offer__text">Tutaj tekst o ofercie. Np. co w niej jest itp.</p>
@@ -95,7 +104,7 @@
 
     <!--Jumbotron 2-->
 
-    <div class="jumbotron2">
+    <div class="jumbotron2 container">
         <div class="jumbotron__rustic">
         </div>
         <div class="container">
@@ -146,7 +155,7 @@
                 <div class="bottomBorder galleryThumbBorder">
                     <img src="pictures/rustic.png">
                 </div>
-                <h3 class="gallery__thumb--title">Sesje noworodkowe</h3>
+                <h3 class="gallery__thumb--title">Sesje niemowlęce</h3>
             </div>
             <div class="gallery4__thumb gallery__thumb" data-name="gallery4">
                 <div class="topBorder galleryThumbBorder">
@@ -227,7 +236,7 @@
 
     <!--Session-->
 
-    <div class="session" id="session">
+    <div class="session container" id="session">
         <h2 class="session__title">O sesjach</h2>
 
         <p class="session__text">Jak wyglądają sesje...<br>Ojczyzno moja! Ty jesteś jak bawić się jak bilardowa kula toczyła się moda i niesrogi. Odgadnęła sąsiadka powód jego wiernym ludem! Jak Jabłonowski zabiegł, aż człowiekiem zrobił. W takim Litwinka tylko się zdawał małpą
@@ -252,9 +261,9 @@
             <div class="footer__left">
                 <h3>Napisz do mnie</h3>
                 <form class="footer__contactForm">
-                    <input class="name" type="text" placeholder="Twoje Imię i Nazwisko">
-                    <input class="email" type="email" placeholder="Twój e-mail">
-                    <textarea class="message" type="text" placeholder="Tutaj wpisz treść wiadomości"></textarea>
+                    <input class="name" type="text" placeholder="Twoje Imię i Nazwisko" required>
+                    <input class="email" type="email" placeholder="Twój e-mail" required>
+                    <textarea class="message" type="text" placeholder="Tutaj wpisz treść wiadomości" required></textarea>
                     <input type="submit" class="submit" value="Wyślij">
                 </form>
             </div>
@@ -262,16 +271,24 @@
                 <h3 class="footer__contact">Anna Hapanowicz</h3><br><a href=""><i class="fa fa-phone"></i> +48 123 456 789</a><br><a href=""><i class="fa fa-envelope"></i> biuro@annaha.pl</a>
                 <div class="social">
                     <button class="facebook">
+                        <a href="">
                         <i class="fa fa-facebook"></i>
+                        </a>
                     </button>
                     <button class="twitter">
+                        <a href="">
                         <i class="fa fa-twitter"></i>
+                        </a>
                     </button>
                     <button class="pinterest">
+                        <a href="">
                         <i class="fa fa-pinterest"></i>
+                        </a>
                     </button>
                     <button class="google-plus">
+                        <a href="">
                         <i class="fa fa-google-plus"></i>
+                        </a>
                     </button>
                 </div>
             </div>

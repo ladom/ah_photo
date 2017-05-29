@@ -79,7 +79,7 @@
 	top: 10px
 	right: 15px
 	font-size: 30px
-	color: $navBgHover
+	color: $angle
 
 	&:hover
 		color: $closeActive
@@ -87,16 +87,15 @@
 
 	&:active
 		transform: scale(0.96)
-		text-shadow: 0 0 10px $navBgHover
+		text-shadow: 0 0 10px $angle
 
 .modal__direction
 	width: 100vw
 	height: 50px
 	position: absolute
 	top: 40%
+	left: 0
 	transform: translateY(-50%)
-	display: flex
-	justify-content: space-between
 
 .modal__direction--left, .modal__direction--right
 	width: 50px
@@ -105,9 +104,15 @@
 	justify-content: center
 	align-items: center
 
+.modal__direction--left
+	float: left
+
+.modal__direction--right
+	float: right
+
 .modal__direction i
 	font-size: 80px
-	color: $navBgHover
+	color: $angle
 
 	&:hover
 		color: $closeActive
@@ -115,4 +120,4 @@
 
 	&:active
 		transform: scale(0.96)
-		text-shadow: 0 0 10px $navBgHover
+		text-shadow: 0 0 10px $angle

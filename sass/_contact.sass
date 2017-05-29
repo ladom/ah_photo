@@ -47,15 +47,26 @@
 	font-family: $lato
 	font-size: 1.2em
 	outline: none
+	border: 1px solid $angle
+
+	&:focus
+		border: 2px solid $closeActive
+		box-shadow: 0 0 4px $angle
 
 .submit
 	width: 150px
 	margin-bottom: 0
 	font-family: $lato
-	color: $white
+	color: $menuBtns
 	font-size: 20px
-	background-color: $aboutText
+	background-color: $navBgHover
 	outline: none
+	border: 1px outset #666
+
+	&:active
+		border: 1px inset #666
+		color: $navBgHover
+		background-color: $menuBtns
 
 .footer__contactForm
 	display: flex
@@ -63,4 +74,45 @@
 	flex-wrap: wrap
 
 .footer__right
-	
+	text-align: right
+
+	@media (max-width: 600px)
+		margin-top: 50px
+
+.social
+	display: flex
+	justify-content: center
+	flex-direction: row
+
+	button
+		width: 40px
+		height: 40px
+		border-radius: 50%
+		border: 1px outset #666
+		margin: 50px 10px
+		outline: none
+		background-color: $navBgHover
+
+		&:hover
+			cursor: pointer
+
+		&:active
+			border: 1px inset #666
+			color: $navBgHover
+			background-color: $menuBtns
+		
+		a
+			width: 40px
+			height: 40px
+			text-align: center
+			line-height: 40px
+
+		i
+			color: $menuBtns
+			font-size: 20px
+
+			&:active
+				color: $navBgHover
+
+.social button:active i
+	color: $navBgHover

@@ -2,6 +2,7 @@ var modal = document.querySelector('.modal');
 var mainImage = document.querySelector('.modal__img--main');
 var galleries = Array.prototype.slice.call(document.querySelectorAll('.gallery__thumb'));
 var closeBtn = document.querySelector('.modal__close');
+var buttons = Array.prototype.slice.call(document.querySelectorAll('.gallery__list li'));
 var thumbImages;
 var gallery;
 var thumbs;
@@ -9,7 +10,9 @@ var thumbs;
 
 function showGallery(e) {
     gallery = galleries.indexOf(e.currentTarget) + 1;
+
     thumbs = Array.prototype.slice.call(document.querySelectorAll(`.gallery${gallery} img`));
+
     var modal = document.querySelector('.modal');
     var modalImgMain = document.querySelector('.modal__img--main');
     var modalThumbs = document.querySelector('.modal__thumbs');
@@ -40,7 +43,46 @@ function showGallery(e) {
     thumbImages.forEach(img => img.addEventListener('click', changeImage));
 }
 
+
+function showGalleryFromList(e) {
+    gallery = buttons.indexOf(e.currentTarget) + 1;
+
+    thumbs = Array.prototype.slice.call(document.querySelectorAll(`.gallery${gallery} img`));
+
+    var modal = document.querySelector('.modal');
+    var modalImgMain = document.querySelector('.modal__img--main');
+    var modalThumbs = document.querySelector('.modal__thumbs');
+    modalImgMain.src = thumbs[0].dataset.image;
+    modalImgMain.dataset.description = thumbs[0].dataset.description;
+    modalThumbsAdd();
+
+
+    function modalThumbsAdd() {
+        var oldModalThumbs = Array.prototype.slice.call(document.querySelectorAll('.modal__thumbs img'));
+        for (var l = 0; l < oldModalThumbs.length; l++) {
+            modalThumbs.removeChild(oldModalThumbs[l]);
+        }
+        for (var a = 0; a < thumbs.length; a++) {
+            var img = document.createElement('img');
+            img.classList.add('modal__thumb');
+            img.src = thumbs[a].src;
+            modalThumbs.appendChild(img);
+        }
+
+    }
+
+
+    modal.style.display = 'block';
+    document.querySelector('.modal__thumbs').scrollLeft = 0;
+    thumbImages = Array.prototype.slice.call(document.querySelectorAll('.modal__thumb'));
+
+    thumbImages.forEach(img => img.addEventListener('click', changeImage));
+}
+
+
 galleries.forEach(div => div.addEventListener('click', showGallery));
+
+buttons.forEach(li => li.addEventListener('click', showGalleryFromList));
 
 function closeModal() {
     modal.style.display = 'none';
