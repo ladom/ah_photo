@@ -19,6 +19,8 @@ function showGallery(e) {
     modalImgMain.src = thumbs[0].dataset.image;
     modalImgMain.dataset.description = thumbs[0].dataset.description;
     modalThumbsAdd();
+    thumbsLight();
+
 
 
     function modalThumbsAdd() {
@@ -43,6 +45,22 @@ function showGallery(e) {
     thumbImages.forEach(img => img.addEventListener('click', changeImage));
 }
 
+function thumbsLight() {
+    var currentThumb = document.querySelectorAll('.modal__thumb');
+    var currentImg = document.querySelector('.modal__img--main');
+    var place = Number(currentImg.dataset.description) - 1;
+
+    for (var a = 0; a < currentThumb.length; a++) {
+        currentThumb[a].style.opacity = '0.6';
+        currentThumb[a].style.boxShadow = 'none';
+    }
+
+
+    currentThumb[place].style.opacity = '1';
+    currentThumb[place].style.boxShadow = '0 0 5px #f095d9';
+    currentThumb[place].scrollIntoView();
+
+}
 
 function showGalleryFromList(e) {
     gallery = buttons.indexOf(e.currentTarget) + 1;
@@ -55,7 +73,7 @@ function showGalleryFromList(e) {
     modalImgMain.src = thumbs[0].dataset.image;
     modalImgMain.dataset.description = thumbs[0].dataset.description;
     modalThumbsAdd();
-
+    thumbsLight();
 
     function modalThumbsAdd() {
         var oldModalThumbs = Array.prototype.slice.call(document.querySelectorAll('.modal__thumbs img'));
@@ -106,6 +124,7 @@ var hideImage = function() {
 
 var showImage = function() {
     mainImage.style.opacity = 1;
+    thumbsLight();
 };
 
 var leftAngle = document.querySelector('.modal__direction--left');

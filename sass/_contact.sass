@@ -84,35 +84,71 @@
 	justify-content: center
 	flex-direction: row
 
-	button
-		width: 40px
-		height: 40px
-		border-radius: 50%
-		border: 1px outset #666
-		margin: 50px 10px
-		outline: none
-		background-color: $navBgHover
+.social__btn
 
-		&:hover
-			cursor: pointer
+	a
+		width: 80px
+		height: 50px
+		text-align: center
+		line-height: 40px
+		display: flex
+		justify-content: center
+		align-items: center
 
-		&:active
-			border: 1px inset #666
-			color: $navBgHover
-			background-color: $menuBtns
-		
-		a
+		.button
 			width: 40px
 			height: 40px
-			text-align: center
-			line-height: 40px
+			border-radius: 50%
+			border: 1px outset $closeActive
+			margin: 5px
+			outline: none
+			background-color: $menuBtns
+			display: flex
+			justify-content: center
+			align-items: center
 
-		i
-			color: $menuBtns
-			font-size: 20px
-
-			&:active
+			&:hover
+				cursor: pointer
+			
+			i
 				color: $navBgHover
+				font-size: 26px
 
-.social button:active i
-	color: $navBgHover
+.social__btn:active .button i
+	color: $menuBtns
+
+.social__btn
+	width: 80px
+	height: 50px
+	box-sizing: border-box
+	border: 2px solid $menuBtns
+	display: flex
+	justify-content: center
+	align-items: center
+	margin: 50px 10px
+	border-top-left-radius: 15%
+	border-top-right-radius: 15%
+	border-bottom-left-radius: 3px
+	border-bottom-right-radius: 3px
+	background-color: $navBgHover
+
+	&:hover
+		cursor: pointer
+
+	&:active
+		background-color: $menuBtns
+		border: 2px solid $navBgHover
+
+.social__btn:active .button
+	border: 1px inset $closeActive
+	color: $menuBtns
+	background-color: $navBgHover
+
+.social__btn span
+	width: 4px
+	height: 30px
+	border-radius: 2px
+	background-color: $menuBtns
+
+.social__btn:active span
+	background-color: $navBgHover

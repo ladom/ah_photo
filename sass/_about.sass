@@ -1,7 +1,10 @@
 .about
-	padding: 50px 20px
+	padding: 50px
 	box-sizing: border-box
 	
+	@media (max-width: 768px)
+		padding: 50px 20px
+
 .about__title
 	font-size: 2em
 	font-family: $vibes
@@ -25,3 +28,11 @@
 	font-family: $lato
 	line-height: 1.6
 	color: $aboutText
+	text-indent: 50px
+	margin-bottom: 10px
+
+	i
+		text-indent: 0
+
+.about__text:last-child
+	margin-bottom: 0

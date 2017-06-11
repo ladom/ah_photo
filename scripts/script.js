@@ -50,6 +50,22 @@ function hideGalleryList() {
 
 document.querySelector('.galeria').addEventListener('mouseout', hideGalleryList);
 hideGalleryList();
+
+// Ustawianie marginesu dla Jumbotron'a górnego
+
+var logo;
+var oldPaper;
+
+function setJumboMargin() {
+    logo = document.querySelector('.logo');
+    oldPaper = document.querySelector('.oldPaper');
+    var h = logo.offsetHeight;
+
+    oldPaper.style.marginTop = h + 120 + 'px';
+}
+
+window.addEventListener('resize', setJumboMargin);
+setJumboMargin();
 var modal = document.querySelector('.modal');
 var mainImage = document.querySelector('.modal__img--main');
 var galleries = Array.prototype.slice.call(document.querySelectorAll('.gallery__thumb'));
@@ -70,6 +86,7 @@ function showGallery(e) {
     modalImgMain.src = thumbs[0].dataset.image;
     modalImgMain.dataset.description = thumbs[0].dataset.description;
     modalThumbsAdd();
+    thumbsLight();
 
     function modalThumbsAdd() {
         var oldModalThumbs = Array.prototype.slice.call(document.querySelectorAll('.modal__thumbs img'));
@@ -93,6 +110,21 @@ function showGallery(e) {
     });
 }
 
+function thumbsLight() {
+    var currentThumb = document.querySelectorAll('.modal__thumb');
+    var currentImg = document.querySelector('.modal__img--main');
+    var place = Number(currentImg.dataset.description) - 1;
+
+    for (var a = 0; a < currentThumb.length; a++) {
+        currentThumb[a].style.opacity = '0.6';
+        currentThumb[a].style.boxShadow = 'none';
+    }
+
+    currentThumb[place].style.opacity = '1';
+    currentThumb[place].style.boxShadow = '0 0 5px #f095d9';
+    currentThumb[place].scrollIntoView();
+}
+
 function showGalleryFromList(e) {
     gallery = buttons.indexOf(e.currentTarget) + 1;
 
@@ -104,6 +136,7 @@ function showGalleryFromList(e) {
     modalImgMain.src = thumbs[0].dataset.image;
     modalImgMain.dataset.description = thumbs[0].dataset.description;
     modalThumbsAdd();
+    thumbsLight();
 
     function modalThumbsAdd() {
         var oldModalThumbs = Array.prototype.slice.call(document.querySelectorAll('.modal__thumbs img'));
@@ -157,6 +190,7 @@ var hideImage = function hideImage() {
 
 var showImage = function showImage() {
     mainImage.style.opacity = 1;
+    thumbsLight();
 };
 
 var leftAngle = document.querySelector('.modal__direction--left');

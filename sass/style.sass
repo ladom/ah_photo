@@ -1,19 +1,62 @@
 @import colors
 @import fonts
+html
+	overflow-x: hidden
 
 body
-	margin-top: 60px
+	// margin-top: 60px
 	font-family: $lato
-
+	background-color: $gradientIn
+	
 	@media (max-width: 992px)
-		margin-top: 120px
+		// margin-top: 120px
 		
 	@media (max-width: 768px)
-		margin-top: 60px
+		// margin-top: 60px
 		
 .container
-	max-width: 1200px
+	max-width: 1000px
 	margin: 0 auto
+
+.oldPaper
+	max-width: 1000px
+	margin: 50px auto
+	background: linear-gradient(to right, $gradientOut, $gradientIn, $gradientIn, $gradientIn, $gradientIn, $gradientIn, $gradientIn, $gradientOut)
+	box-shadow: 0 0 5px 5px #999
+
+	@media (max-width: 992px)
+		margin-top: 500px
+		
+	@media (max-width: 768px)
+		margin-top: 450px
+
+.oldPaper2
+	max-width: 1000px
+	margin: 50px auto
+	background: linear-gradient(to right, $gradientOut, $gradientIn, $gradientIn, $gradientIn, $gradientIn, $gradientIn, $gradientIn, $gradientOut)
+	box-shadow: 0 0 5px 5px #999
+
+.logo
+	width: 100vw
+	position: fixed
+	top: 80px
+	z-index: -1
+
+	@media (max-width: 992px)
+		top: 120px
+
+	@media (max-width: 768px)
+		top: 80px
+
+.logo__img
+	display: block
+	max-width: 700px
+	height: auto
+	margin: 0 auto
+
+	@media (max-width: 768px)
+		max-width: 95vw
+		
 
 @import navigation
 @import jumbotron

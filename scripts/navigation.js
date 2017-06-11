@@ -49,3 +49,19 @@ function hideGalleryList() {
 
 document.querySelector('.galeria').addEventListener('mouseout', hideGalleryList);
 hideGalleryList();
+
+// Ustawianie marginesu dla Jumbotron'a górnego
+
+var logo;
+var oldPaper;
+
+function setJumboMargin() {
+    logo = document.querySelector('.logo');
+    oldPaper = document.querySelector('.oldPaper');
+    var h = logo.offsetHeight;
+
+    oldPaper.style.marginTop = `${h + 120}px`;
+}
+
+window.addEventListener('resize', setJumboMargin);
+setJumboMargin();
